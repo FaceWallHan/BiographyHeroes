@@ -1,6 +1,9 @@
 package com.example.hero;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -43,10 +46,26 @@ public class MeasureView extends View {
     private int measureHeight(int measureSpec){
         return measureWidth(measureSpec);
     }
-//    setMeasuredDimension(measureWidth(widthMeasureSpec),measureHeight(heightMeasureSpec));
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+       // super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        setMeasuredDimension(measureWidth(widthMeasureSpec),measureHeight(heightMeasureSpec));
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        /*
+        @SuppressLint("DrawAllocation")
+        Bitmap bitmap1=Bitmap.createBitmap(20,20, Bitmap.Config.ARGB_8888);
+        @SuppressLint("DrawAllocation")
+        Bitmap bitmap2=Bitmap.createBitmap(20,20, Bitmap.Config.ARGB_8888);
+        canvas.drawBitmap(bitmap1,0,0,null);
+        canvas.drawBitmap(bitmap2,0,0,null);
+        @SuppressLint("DrawAllocation")
+        Canvas canvas1=new Canvas(bitmap1);
+         */
+//        canvas.draw
+        super.onDraw(canvas);
     }
 }
