@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.hero.TopBar
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffff00"
+    android:id="@+id/topBar"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    custom:leftBackground="@drawable/left"
+    custom:leftText="Back"
+    custom:leftTextColor="#ff00ff"
+
+    custom:rightBackground="@drawable/right"
+    custom:rightText="more"
+    custom:rightTextColor="#ff00ff"
+
+    custom:title="自定义标题"
+    custom:titleTextSize="15dp"
+    custom:titleTextColor="#123412">
+
+</com.example.hero.TopBar>

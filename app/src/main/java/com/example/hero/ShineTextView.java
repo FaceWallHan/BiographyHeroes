@@ -64,7 +64,7 @@ public class ShineTextView extends TextView {
             //遮罩既视感？总距离=正+负
             gradientMatrix.setTranslate(translate,0);//平移
             linearGradient.setLocalMatrix(gradientMatrix);
-            postInvalidateDelayed(1000);
+            postInvalidateDelayed(100);
         }
     }
 }
