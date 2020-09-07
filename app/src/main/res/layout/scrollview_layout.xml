@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.example.hero.MyScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:text="first"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:text="first"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <Button
+            android:text="second"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:text="second"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <Button
+            android:text="third"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:text="third"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.example.hero.MyScrollView>
+</LinearLayout>
