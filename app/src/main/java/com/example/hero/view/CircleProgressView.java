@@ -1,4 +1,4 @@
-package com.example.hero;
+package com.example.hero.view;
 
 import android.content.Context;
 import android.graphics.Canvas;

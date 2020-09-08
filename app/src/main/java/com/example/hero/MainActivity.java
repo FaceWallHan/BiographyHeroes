@@ -13,7 +13,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.scrollview_layout);
+        setContentView(R.layout.group_test_layout);
+        /**setContentView(R.layout.scrollview_layout);*/
 //        setContentView(R.layout.activity_main);
 //        TopBar topBar=findViewById(R.id.topBar);
 //        topBar.setTopBarClickListener(new TopBar.topBarClickListener() {

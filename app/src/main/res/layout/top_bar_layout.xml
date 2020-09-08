@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.hero.TopBar
+<com.example.hero.view.TopBar
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="#ffff00"
@@ -18,4 +18,4 @@
     custom:titleTextSize="15dp"
     custom:titleTextColor="#123412">
 
-</com.example.hero.TopBar>
+</com.example.hero.view.TopBar>

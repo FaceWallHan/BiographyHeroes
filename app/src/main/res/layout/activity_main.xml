@@ -6,17 +6,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.example.hero.MeasureView
+    <com.example.hero.view.MeasureView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#ff00ff" />
 
-    <com.example.hero.DrawTextView
+    <com.example.hero.view.DrawTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Android" />
 
-    <com.example.hero.ShineTextView
+    <com.example.hero.view.ShineTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Android"
@@ -28,12 +28,12 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="vertical">
-        <com.example.hero.CircleProgressView
+        <com.example.hero.view.CircleProgressView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             tools:ignore="NestedWeights" />
-        <com.example.hero.BarView
+        <com.example.hero.view.BarView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"/>

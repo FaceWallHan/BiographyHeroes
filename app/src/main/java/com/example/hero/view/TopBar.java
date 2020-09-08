@@ -1,4 +1,4 @@
-package com.example.hero;
+package com.example.hero.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.example.hero.R;
 
 public class TopBar extends RelativeLayout {
     private int leftTextColor,rightTextColor,titleTextColor;
@@ -52,7 +54,7 @@ public class TopBar extends RelativeLayout {
     private void inView(Context context, AttributeSet attrs){
         @SuppressLint("Recycle")
         //通过此方法，将在attrs.xml中定义的declare-styleable所有属性的值存储到TypedArray中
-                TypedArray ta=context.obtainStyledAttributes(attrs,R.styleable.TopBar);
+                TypedArray ta=context.obtainStyledAttributes(attrs, R.styleable.TopBar);
         leftTextColor=ta.getColor(R.styleable.TopBar_leftTextColor,0);
         leftBackground=ta.getDrawable(R.styleable.TopBar_leftBackground);
         leftText=ta.getString(R.styleable.TopBar_leftText);

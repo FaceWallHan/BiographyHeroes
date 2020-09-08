@@ -1,4 +1,4 @@
-package com.example.hero;
+package com.example.hero.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

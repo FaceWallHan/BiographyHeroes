@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16sp"
+    tools:context=".MainActivity">
+
+    <com.example.hero.view.MyViewGroupA
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_blue_bright">
+
+    </com.example.hero.view.MyViewGroupA>
+    <com.example.hero.view.MyViewGroupB
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="@android:color/holo_green_dark">
+
+
+
+    </com.example.hero.view.MyViewGroupB>
+    <com.example.hero.view.MyView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@android:color/darker_gray" />
+</RelativeLayout>
