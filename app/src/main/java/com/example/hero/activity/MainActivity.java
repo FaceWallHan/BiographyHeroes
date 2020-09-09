@@ -1,4 +1,4 @@
-package com.example.hero;
+package com.example.hero.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.hero.R;
 
 public class MainActivity extends AppCompatActivity {
 
