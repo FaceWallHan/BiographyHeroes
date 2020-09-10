@@ -88,7 +88,7 @@ public class ListViewActivity extends AppCompatActivity {
             @Override
             public void onScroll(AbsListView absListView, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
                                                 //当前能看到的第一个item的position，当前能看到的item总数，整个listView的item总数(包括没有显示完整的)
-                //Log.d(TAG, "onScroll: 滚动时一直调用"+"firstVisibleItem:"+firstVisibleItem+"visibleItemCount:"+visibleItemCount+"totalItemCount:"+totalItemCount);
+                Log.d(TAG, "onScroll: 滚动时一直调用"+"firstVisibleItem:"+firstVisibleItem+"visibleItemCount:"+visibleItemCount+"totalItemCount:"+totalItemCount);
                 if (firstVisibleItem+visibleItemCount==totalItemCount&&totalItemCount>0){
                     Log.d(TAG, "onScroll:滚动到最后一行");
                 }
