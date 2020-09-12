@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">BiographyHeroes</string>
+    <string-array name="type">
+        <item>发送</item>
+        <item>接受</item>
+    </string-array>
 </resources>
