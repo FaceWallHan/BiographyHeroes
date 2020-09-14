@@ -12,7 +12,8 @@
         <activity android:name=".activity.HideTitleActivity"/>
         <activity android:name=".activity.ListViewActivity"/>
         <activity android:name=".activity.MainActivity"/>
-        <activity android:name=".activity.ChatActivity">
+        <activity android:name=".activity.ChatActivity"/>
+        <activity android:name=".activity.ScrollActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
