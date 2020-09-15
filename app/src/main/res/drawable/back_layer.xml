@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/default_head"/>
+    <item android:drawable="@drawable/default_head"
+        android:left="10dip"
+        android:right="10dip"
+        android:top="10dip"
+        android:bottom="10dip"/>
+    <item android:drawable="@drawable/giao"
+        android:left="200dp"
+        android:right="200dp"
+        android:top="200dp"
+        android:bottom="200dp"/>
+<!--    图层效果-->
+</layer-list>
