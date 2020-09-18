@@ -26,13 +26,14 @@ public class DrawTestActivity extends AppCompatActivity implements SeekBar.OnSee
         setSeekBar(seekHue);
         setSeekBar(seekSaturation);
         setSeekBar(seekLum);
+        img_color.setImageBitmap(DisplayUtil.handleImageRelief(bitmap));
     }
     private void inView(){
         seekHue=findViewById(R.id.hue);
         seekSaturation=findViewById(R.id.saturation);
         seekLum=findViewById(R.id.lum);
         img_color=findViewById(R.id.img_color);
-        bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.touxiang_1);
+        bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.ask);
     }
     private void setSeekBar(SeekBar seekBar){
         seekBar.setOnSeekBarChangeListener(this);
@@ -53,7 +54,7 @@ public class DrawTestActivity extends AppCompatActivity implements SeekBar.OnSee
                 lum=progress*1.0F/MID_VALUE;
                 break;
         }
-        img_color.setImageBitmap(DisplayUtil.handleImageEffect(bitmap,hue,lum,saturation));
+        //img_color.setImageBitmap(DisplayUtil.handleImageEffect(bitmap,hue,lum,saturation));
     }
 
     @Override
