@@ -92,7 +92,7 @@ public class ClickView extends View {
         canvas.saveLayerAlpha(0,0,400,400,127);//入栈(创建新图层)
         paint.setColor(Color.RED);
         canvas.drawCircle(200,200,100,paint);
-        canvas.restore();//入栈
+        canvas.restore();//出栈
         //特别注意的是  saveLayerAlpha()restore()要同时使用，才能够在canvas 画出多个层次，就是花多少层就要有多少对两个函数！
     }
 }
