@@ -11,7 +11,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.path_effect_view);
+        setContentView(R.layout.surface_hand_draw_layout);
+        //setContentView(R.layout.surface_template_layout);
+        //setContentView(R.layout.path_effect_view);
         //setContentView(R.layout.reflect_layout);
         //setContentView(R.layout.circle_layout);
         //setContentView(R.layout.erase_layout);
