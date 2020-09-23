@@ -15,7 +15,8 @@
         <activity android:name=".activity.ChatActivity"/>
         <activity android:name=".activity.ScrollActivity"/>
         <activity android:name=".activity.MatrixColorActivity"/>
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.MainActivity"/>
+        <activity android:name=".activity.AnimationTestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
