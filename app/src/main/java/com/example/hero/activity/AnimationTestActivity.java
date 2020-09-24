@@ -10,19 +10,25 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AnimationSet;
+import android.view.animation.LayoutAnimationController;
+import android.view.animation.ScaleAnimation;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ViewAnimator;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hero.R;
+import com.example.hero.animation.CustomAnimation;
 
 public class AnimationTestActivity  extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.animation_test_layout);
+        LinearLayout layout=findViewById(R.id.layout);
+        layoutAnimation(layout);
         final Button anim=findViewById(R.id.anim);
         anim.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ObjectAnimatorBinding")
@@ -32,10 +38,24 @@ public class AnimationTestActivity  extends AppCompatActivity {
                 //objectText(anim);
                 //setValueAnimation(anim);
                 //setXMLAnimation(anim);
-                directAnimation(anim);
+                //directAnimation(anim);
+                //anim.startAnimation(new CustomAnimation(true));
+                CustomAnimation animation=new CustomAnimation(false);
+                animation.setRotateY(30);
+                anim.startAnimation(animation);
             }
         });
 
+    }
+    private void layoutAnimation(LinearLayout layout){
+        //设置过渡动画
+        ScaleAnimation scaleAnimation=new ScaleAnimation(0,1,0,1);
+        scaleAnimation.setDuration(2000);
+        //设置布局动画的显示属性
+        LayoutAnimationController controller=new LayoutAnimationController(scaleAnimation,0.5f);
+        controller.setOrder(LayoutAnimationController.ORDER_NORMAL);//子view的显示顺序
+        //为ViewGroup设置布局动画
+        layout.setLayoutAnimation(controller);
     }
     private void directAnimation(View view){
         //直接驱动属性动画
