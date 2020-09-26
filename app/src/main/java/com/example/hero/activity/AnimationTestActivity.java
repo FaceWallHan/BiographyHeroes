@@ -7,12 +7,16 @@ import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
+import android.graphics.drawable.Animatable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AnimationSet;
 import android.view.animation.LayoutAnimationController;
 import android.view.animation.ScaleAnimation;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ViewAnimator;
 
@@ -23,12 +27,20 @@ import com.example.hero.R;
 import com.example.hero.animation.CustomAnimation;
 
 public class AnimationTestActivity  extends AppCompatActivity {
+    private ImageView vector;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.animation_test_layout);
         LinearLayout layout=findViewById(R.id.layout);
         layoutAnimation(layout);
+        vector=findViewById(R.id.vector);
+        vector.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startAnimate();
+            }
+        });
         final Button anim=findViewById(R.id.anim);
         anim.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ObjectAnimatorBinding")
@@ -46,6 +58,12 @@ public class AnimationTestActivity  extends AppCompatActivity {
             }
         });
 
+    }
+    private void startAnimate(){
+        Drawable drawable=vector.getDrawable();
+        if (drawable instanceof Animatable){
+            ((Animatable) drawable).start();
+        }
     }
     private void layoutAnimation(LinearLayout layout){
         //设置过渡动画

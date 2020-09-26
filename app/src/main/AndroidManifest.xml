@@ -16,7 +16,10 @@
         <activity android:name=".activity.ScrollActivity"/>
         <activity android:name=".activity.MatrixColorActivity"/>
         <activity android:name=".activity.MainActivity"/>
-        <activity android:name=".activity.AnimationTestActivity">
+        <activity android:name=".activity.AnimationTestActivity"/>
+        <activity android:name=".activity.SmartAnimActivity"/>
+        <activity android:name=".activity.TimeAnimActivity"/>
+        <activity android:name=".activity.DropDownAnimActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

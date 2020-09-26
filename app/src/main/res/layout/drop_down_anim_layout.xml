@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:background="@android:color/holo_green_dark"
+        android:id="@+id/big_drop"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/giao"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+        <TextView
+            android:textSize="30dp"
+            android:layout_gravity="center"
+            android:textColor="#fff"
+            android:text="click me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:visibility="gone"
+        android:background="@android:color/holo_orange_dark"
+        android:id="@+id/small_drop"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/touxiang_1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+        <TextView
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:textColor="#fff"
+            android:text="i am hidden"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>
