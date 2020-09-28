@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hero">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,7 +19,8 @@
         <activity android:name=".activity.AnimationTestActivity"/>
         <activity android:name=".activity.SmartAnimActivity"/>
         <activity android:name=".activity.TimeAnimActivity"/>
-        <activity android:name=".activity.DropDownAnimActivity">
+        <activity android:name=".activity.DropDownAnimActivity"/>
+        <activity android:name=".activity.ChinaMapActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
