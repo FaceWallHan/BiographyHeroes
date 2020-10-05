@@ -85,7 +85,7 @@ public class NetRequest extends Thread{
                 }
             });
             Retrofit retrofit=new Retrofit.Builder()
-                    .baseUrl("http://192.168.43.110:8080/test/")//只有这里地址加上“/”
+                    .baseUrl("http://192.168.1.101:8080/test/")//只有这里地址加上“/”
                     //.addConverterFactory(GsonConverterFactory.create())
                     .client(builder.build())
                     .build();
