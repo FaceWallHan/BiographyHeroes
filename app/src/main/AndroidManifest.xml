@@ -19,7 +19,7 @@
         <activity android:name=".activity.AnimationTestActivity"/>
         <activity android:name=".activity.SmartAnimActivity"/>
         <activity android:name=".activity.TimeAnimActivity"/>
-        <activity android:name=".activity.DropDownAnimActivity"/>
+        <activity android:name=".activity.DropDownAnimActivity" />
         <activity android:name=".activity.ChinaMapActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -10,17 +10,17 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
-public class ClickView extends View {
+public class ClockView extends View {
 
-    public ClickView(Context context) {
+    public ClockView(Context context) {
         super(context);
     }
 
-    public ClickView(Context context, @Nullable AttributeSet attrs) {
+    public ClockView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public ClickView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public ClockView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

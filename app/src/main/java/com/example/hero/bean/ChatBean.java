@@ -1,4 +1,4 @@
-package com.example.hero;
+package com.example.hero.bean;
 
 public class ChatBean {
     private boolean type;

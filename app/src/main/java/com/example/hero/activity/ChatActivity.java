@@ -1,7 +1,6 @@
 package com.example.hero.activity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -13,7 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.hero.ChatBean;
+import com.example.hero.bean.ChatBean;
 import com.example.hero.R;
 import com.example.hero.adapter.ChatAdapter;
 
