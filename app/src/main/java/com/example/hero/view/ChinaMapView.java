@@ -6,9 +6,11 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.RectF;
 import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -32,6 +34,9 @@ import javax.xml.parsers.DocumentBuilderFactory;
 public class ChinaMapView extends View {
     private Paint paint;
     private List<ProvinceBean> pathList;
+    private RectF pathRectF;
+    //缩放比
+    private float scale;
     @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
         @Override
@@ -70,6 +75,7 @@ public class ChinaMapView extends View {
         }
         //重绘
         postInvalidate();
+
     }
     public ChinaMapView(Context context) {
         super(context);
@@ -114,6 +120,8 @@ public class ChinaMapView extends View {
                 //获取根节点
                 Element rootElement = document.getDocumentElement();
                 //获取根节点下面的path节点
+                //定义整个地图的四个点
+                float left=-1,top=-1,right=-1,bottom=-1;
                 NodeList nodeList = rootElement.getElementsByTagName("path");
                 //遍历所有path节点
                 for (int i = 0; i < nodeList.getLength(); i++) {
@@ -125,8 +133,18 @@ public class ChinaMapView extends View {
                     ProvinceBean bean = new ProvinceBean(path);
                     //bean.setFillColor(Color.parseColor(fillColor));
                     pathList.add(bean);
-
+                    //计算整个地图的区域
+                    RectF rectF = new RectF();
+                    path.computeBounds(rectF,true);
+                    left=left==-1?rectF.left:Math.min(left,rectF.left);
+                    top=top==-1?rectF.top:Math.min(top,rectF.top);
+                    right=right==-1?rectF.right:Math.max(right,rectF.right);
+                    bottom=bottom==-1?rectF.bottom:Math.max(bottom,rectF.bottom);
                 }
+                Log.d("1111111111111111111", "left: "+left+"top: "+top+"right: "+right+"bottom: "+bottom);
+                pathRectF=new RectF(left,top,right,bottom);
+
+                Log.d("1111111111111111111", "run: "+ pathRectF.left);
                 handler.sendEmptyMessage(1);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -135,9 +153,27 @@ public class ChinaMapView extends View {
     };
 
     @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        int width = MeasureSpec.getSize(widthMeasureSpec);
+        int height = MeasureSpec.getSize(heightMeasureSpec);
+        if (pathRectF!=null){
+            float realWidth=pathRectF.width();
+            Log.d("1111111111111111111", "realWidth: "+realWidth+"width:"+width);
+            scale=width/realWidth;
+
+        }
+        Log.d("1111111111111111111", "onMeasure: "+(pathRectF==null));
+        setMeasuredDimension(MeasureSpec.makeMeasureSpec(width,MeasureSpec.EXACTLY),
+                MeasureSpec.makeMeasureSpec(height,MeasureSpec.EXACTLY));
+    }
+
+    @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.save();
+        //对地图进行缩放
+        Log.d("1111111111111111111", "onDraw: "+scale);
+        canvas.scale(scale,scale);
         for (ProvinceBean provinceBean : pathList) {
             provinceBean.draw(canvas, paint);
         }
