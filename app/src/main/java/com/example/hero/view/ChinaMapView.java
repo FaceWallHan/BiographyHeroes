@@ -11,6 +11,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -26,6 +27,7 @@ import org.w3c.dom.NodeList;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -35,6 +37,7 @@ public class ChinaMapView extends View {
     private Paint paint;
     private List<ProvinceBean> pathList;
     private RectF pathRectF;
+    private ProvinceBean selectProvince;
     //缩放比
     private float scale;
     @SuppressLint("HandlerLeak")
@@ -75,7 +78,6 @@ public class ChinaMapView extends View {
         }
         //重绘
         postInvalidate();
-
     }
     public ChinaMapView(Context context) {
         super(context);
@@ -102,7 +104,6 @@ public class ChinaMapView extends View {
         pathList = new ArrayList<>();
         paint.setColor(Color.RED);
         thread.start();
-
     }
 
     private Thread thread = new Thread() {
@@ -127,7 +128,6 @@ public class ChinaMapView extends View {
                 for (int i = 0; i < nodeList.getLength(); i++) {
                     Element element = (Element) nodeList.item(i);
                     String pathData = element.getAttribute("d");
-                    String fillColor = element.getAttribute("fill");
                     //解析pathData属性数据
                     Path path = PathParser.createPathFromPathData(pathData);
                     ProvinceBean bean = new ProvinceBean(path);
@@ -141,10 +141,8 @@ public class ChinaMapView extends View {
                     right=right==-1?rectF.right:Math.max(right,rectF.right);
                     bottom=bottom==-1?rectF.bottom:Math.max(bottom,rectF.bottom);
                 }
-                Log.d("1111111111111111111", "left: "+left+"top: "+top+"right: "+right+"bottom: "+bottom);
                 pathRectF=new RectF(left,top,right,bottom);
-
-                Log.d("1111111111111111111", "run: "+ pathRectF.left);
+                measure(getMeasuredWidth(),getMeasuredHeight());
                 handler.sendEmptyMessage(1);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -154,15 +152,13 @@ public class ChinaMapView extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+
         int width = MeasureSpec.getSize(widthMeasureSpec);
         int height = MeasureSpec.getSize(heightMeasureSpec);
         if (pathRectF!=null){
             float realWidth=pathRectF.width();
-            Log.d("1111111111111111111", "realWidth: "+realWidth+"width:"+width);
             scale=width/realWidth;
-
         }
-        Log.d("1111111111111111111", "onMeasure: "+(pathRectF==null));
         setMeasuredDimension(MeasureSpec.makeMeasureSpec(width,MeasureSpec.EXACTLY),
                 MeasureSpec.makeMeasureSpec(height,MeasureSpec.EXACTLY));
     }
@@ -172,11 +168,30 @@ public class ChinaMapView extends View {
         super.onDraw(canvas);
         canvas.save();
         //对地图进行缩放
-        Log.d("1111111111111111111", "onDraw: "+scale);
         canvas.scale(scale,scale);
         for (ProvinceBean provinceBean : pathList) {
-            provinceBean.draw(canvas, paint);
+            provinceBean.draw(canvas, paint,false);
+        }
+        if (selectProvince!=null){
+            selectProvince.draw(canvas,paint,true);
         }
         canvas.restore();
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        handleTouch(event.getX(),event.getY());
+        return super.onTouchEvent(event);
+    }
+
+    private void handleTouch(float x, float y) {
+        for (ProvinceBean provinceBean : pathList) {
+            if (provinceBean.isTouch(x/scale, y/scale)){
+               selectProvince=provinceBean;
+            }
+        }
+        if (selectProvince!=null){
+            invalidate();
+        }
     }
 }
