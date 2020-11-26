@@ -1,8 +1,11 @@
 package com.example.hero.activity;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +17,9 @@ public class ChinaMapActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.china_map_layout);
+        Intent intent=new Intent();
+        
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
 //        handSub("很快，就有人被搜刮一空，再也拿不出钱了，然后全家都被下一波清兵给杀的干干净净。慢慢的" +
 //                "，被杀的人越来越多，还能交出钱的人越来越少。很多人没了钱，就把自己藏的严严实实，但扬州城就那" +
 //                "么大，能藏人的地方就那么点，绝大多数人都找不到安全的藏身之地。更何况，还有不少本地人，主动给清" +
@@ -58,5 +64,10 @@ public class ChinaMapActivity extends AppCompatActivity {
             //打印结果 或者用String[] 来接 在循环外返回一个数组出去
             Log.d(TAG, string);
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
     }
 }

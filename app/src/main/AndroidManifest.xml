@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.HideTitleActivity"/>
+        <activity android:name=".activity.PMInfoActivity"/>
+        <activity android:name=".activity.ChinaMapActivity"/>
+        <activity android:name=".activity.HideTitleActivity" />
         <activity android:name=".activity.ListViewActivity"/>
         <activity android:name=".activity.DrawTestActivity"/>
         <activity android:name=".activity.ChatActivity"/>
@@ -20,7 +22,7 @@
         <activity android:name=".activity.SmartAnimActivity"/>
         <activity android:name=".activity.TimeAnimActivity"/>
         <activity android:name=".activity.DropDownAnimActivity" />
-        <activity android:name=".activity.ChinaMapActivity">
+        <activity android:name=".activity.AMInfoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

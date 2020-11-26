@@ -194,4 +194,5 @@ public class ChinaMapView extends View {
             invalidate();
         }
     }
+
 }
