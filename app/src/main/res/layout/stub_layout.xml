@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/visible_bt"
+        android:text="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_toEndOf="@id/visible_bt"
+        android:layout_alignBottom="@id/visible_bt"
+        android:id="@+id/inflate_bt"
+        android:text="inflate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_toEndOf="@id/inflate_bt"
+        android:layout_alignBottom="@id/visible_bt"
+        android:id="@+id/gone_bt"
+        android:text="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ViewStub
+        android:layout="@layout/in_layout"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/not_often_use"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

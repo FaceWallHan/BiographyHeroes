@@ -22,7 +22,8 @@
         <activity android:name=".activity.SmartAnimActivity"/>
         <activity android:name=".activity.TimeAnimActivity"/>
         <activity android:name=".activity.DropDownAnimActivity" />
-        <activity android:name=".activity.AMInfoActivity">
+        <activity android:name=".activity.AMInfoActivity"/>
+        <activity android:name=".activity.StubActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
