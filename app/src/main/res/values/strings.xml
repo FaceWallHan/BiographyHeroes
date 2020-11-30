@@ -4,4 +4,8 @@
         <item>发送</item>
         <item>接受</item>
     </string-array>
+    <string-array name="recycle">
+        <item>线性布局</item>
+        <item>卡片布局</item>
+    </string-array>
 </resources>

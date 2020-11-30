@@ -1,6 +1,7 @@
 package com.example.hero.activity;
 
 import android.os.Bundle;
+import android.os.Debug;
 import android.view.View;
 import android.view.ViewStub;
 import android.widget.Button;
@@ -18,6 +19,7 @@ public class StubActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stub_layout);
         inView();
+        Debug.startMethodTracing();
     }
     private void inView(){
         Button visible_bt=findViewById(R.id.visible_bt);
@@ -53,5 +55,11 @@ public class StubActivity extends AppCompatActivity implements View.OnClickListe
                 textView.setText("hahahaha");
                 break;
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Debug.stopMethodTracing();
     }
 }
