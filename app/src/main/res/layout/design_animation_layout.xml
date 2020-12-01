@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:background="@drawable/back_gradient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:textColor="#fff"
+            android:text="有界波纹"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+        <Button
+            android:textColor="#fff"
+            android:text="无界波纹"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+        <Button
+            android:textColor="#fff"
+            android:text="XML文件"
+            android:background="@drawable/ripple"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+    </LinearLayout>
+</LinearLayout>
