@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">BiographyHeroes</string>
     <string-array name="type">
         <item>发送</item>
@@ -8,4 +8,6 @@
         <item>线性布局</item>
         <item>卡片布局</item>
     </string-array>
+    <string name="description" >abc_action_bar_home_description</string>
+    <string name="format">abc_action_bar_home_description_format</string>
 </resources>
